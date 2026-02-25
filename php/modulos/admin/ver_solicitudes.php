@@ -1,0 +1,94 @@
+<?php
+session_start();
+require_once '../../config/conexion.php';
+
+if (!isset($_SESSION['usuario_user'])) {
+    header('Location: ../../../auth/index_login.php');
+    exit();
+}
+
+$usuario = $_SESSION['usuario_user'] ?? 'Admin';
+$titulo = 'Ver Solicitudes de Productos';
+mysqli_close($conexion);
+?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo $titulo; ?> - Fitcamp</title>
+    <link rel="stylesheet" href="../../../styles/styles_dashboard.css">
+    <link rel="stylesheet" href="../../../styles/styles_pagos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+    /* Small adjustments for solicitudes view */
+    </style>
+</head>
+<body>
+    <nav class="sidebar-pagos">
+        <div class="user-section">
+            <div class="profile-img-container">
+                <img src="../../../images/Fitcamp_Logo.png" alt="Perfil">
+            </div>
+            <h3><?php echo htmlspecialchars($usuario); ?></h3>
+            <p>Módulo de Solicitudes</p>
+        </div>
+
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li>
+                    <a href="../../../dashboard/admin/index_admin.php" class="nav-item">
+                        <i class="fas fa-arrow-left"></i>
+                        <span>Volver al Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-item active" onclick="cargarSolicitudes('')">
+                        <i class="fas fa-list"></i>
+                        <span>Todas</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-item" onclick="cargarSolicitudes('pagado')">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Aprobadas</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-item" onclick="cargarSolicitudes('rechazado')">
+                        <i class="fas fa-times-circle"></i>
+                        <span>Rechazadas</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="logout-section">
+                <div class="nav-item logout-link" onclick="if(confirm('¿Cerrar sesión?')) window.location.href='../../auth/cerrar_sesion.php'">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Cerrar Sesión</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="content-pagos">
+        <div class="modulo-pagos">
+            <div class="modulo-header">
+                <h2><i class="fas fa-list"></i> <?php echo $titulo; ?></h2>
+            </div>
+
+            <div class="seccion-metodos">
+                <h3><i class="fas fa-box"></i> Solicitudes</h3>
+                <div id="lista-metodos" class="grid-metodos">
+                    <div class="cargando-metodos">
+                        <div class="spinner"></div>
+                        <p>Cargando Solicitudes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../../scripts/ver_solicitudes.js"></script>
+</body>
+</html>
