@@ -1,0 +1,334 @@
+    .estadisticas-pagos {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 25px;
+        padding: 20px;
+        background: rgba(30, 30, 30, 0.8);
+        border-radius: 12px;
+        border: 1px solid #4B0082;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    
+    .estadistica-item {
+        flex: 1;
+        min-width: 120px;
+        text-align: center;
+        padding: 15px;
+        background: rgba(40, 40, 40, 0.9);
+        border-radius: 10px;
+        border: 1px solid rgba(147, 112, 219, 0.3);
+        transition: all 0.3s;
+    }
+    
+    .estadistica-item:hover {
+        transform: translateY(-3px);
+        border-color: #9370DB;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .estadistica-numero {
+        display: block;
+        font-size: 28px;
+        font-weight: 700;
+        color: #4CAF50; /* Verde para aprobados */
+        margin-bottom: 5px;
+    }
+    
+    .estadistica-texto {
+        font-size: 12px;
+        color: #94a3b8;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    
+    .btn-actualizar {
+        background: linear-gradient(135deg, #4CAF50, #2E7D32);
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 8px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: 0.3s;
+        font-weight: 500;
+    }
+    
+    .btn-actualizar:hover {
+        background: linear-gradient(135deg, #45a049, #1B5E20);
+        transform: translateY(-2px);
+    }
+    
+    /* TABLA OCUPANDO TODO EL ANCHO */
+    .tabla-container {
+        width: 100%;
+        overflow-x: auto;
+        background: rgba(30, 30, 30, 0.8);
+        border-radius: 12px;
+        padding: 0; /* Sin padding para que la tabla ocupe todo */
+        border: 1px solid #4B0082;
+    }
+    
+    .tabla-pagos {
+        width: 100%;
+        border-collapse: collapse;
+        color: #fff;
+        min-width: 1000px; /* Ancho mínimo para que no se comprima */
+    }
+    
+    .tabla-pagos thead {
+        background: linear-gradient(135deg, rgba(75, 0, 130, 0.4), rgba(128, 0, 128, 0.3));
+        border-bottom: 2px solid #4B0082;
+    }
+    
+    .tabla-pagos th {
+        padding: 18px 15px;
+        text-align: left;
+        font-weight: 600;
+        color: #9370DB;
+        border-bottom: 2px solid #4B0082;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    
+    .tabla-pagos th i {
+        margin-right: 10px;
+        width: 20px;
+        text-align: center;
+        font-size: 1rem;
+    }
+    
+    .tabla-pagos tbody tr {
+        border-bottom: 1px solid rgba(147, 112, 219, 0.1);
+        transition: all 0.3s;
+    }
+    
+    .tabla-pagos tbody tr:nth-child(even) {
+        background: rgba(40, 40, 40, 0.5);
+    }
+    
+    .tabla-pagos tbody tr:hover {
+        background: rgba(147, 112, 219, 0.15);
+        transform: translateX(5px);
+    }
+    
+    .tabla-pagos td {
+        padding: 16px 15px;
+        vertical-align: middle;
+        font-size: 0.95rem;
+    }
+    
+    /* MEJORAS ESPECÍFICAS PARA CADA COLUMNA */
+    .usuario-info {
+        display: flex;
+        flex-direction: column;
+        min-width: 180px;
+    }
+    
+    .usuario-nombre {
+        font-weight: 500;
+        margin-bottom: 5px;
+        color: #f8fafc;
+        font-size: 1rem;
+    }
+    
+    .usuario-id {
+        font-size: 0.8rem;
+        color: #94a3b8;
+        display: flex;
+        gap: 10px;
+    }
+    
+    .fecha-info {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        min-width: 150px;
+    }
+    
+    .fecha-info i {
+        color: #9370DB;
+        font-size: 1rem;
+    }
+    
+    .fecha-info.aprobacion {
+        color: #4CAF50;
+        font-weight: 500;
+    }
+    
+    .aprobacion i {
+        color: #4CAF50;
+    }
+    
+    .monto-info {
+        color: #4CAF50;
+        font-weight: bold;
+        font-size: 1.1rem;
+        min-width: 120px;
+    }
+    
+    .monto-info small {
+        color: #aaa;
+        font-size: 0.85rem;
+        display: block;
+        margin-top: 5px;
+        font-weight: normal;
+    }
+    
+    .metodo-info {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 500;
+        min-width: 150px;
+    }
+    
+    .metodo-info i {
+        font-size: 1.1rem;
+    }
+    
+    .aprobador-info {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #cbd5e1;
+        min-width: 150px;
+    }
+    
+    .aprobador-info i {
+        color: #4CAF50;
+        font-size: 1rem;
+    }
+    
+    /* ACCIONES - MEJOR VISUAL */
+    .acciones-tabla {
+        display: flex;
+        gap: 8px;
+        min-width: 200px;
+        justify-content: flex-start;
+    }
+    
+    .btn-tabla {
+        background: transparent;
+        border: 1px solid;
+        color: inherit;
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s;
+        font-size: 1rem;
+    }
+    
+    .btn-tabla:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .btn-referencia {
+        border-color: #2196F3;
+        color: #2196F3;
+        background: rgba(33, 150, 243, 0.1);
+    }
+    
+    .btn-referencia:hover {
+        background: rgba(33, 150, 243, 0.2);
+        border-color: #0b7dda;
+    }
+    
+    .btn-comprobante {
+        border-color: #9C27B0;
+        color: #9C27B0;
+        background: rgba(156, 39, 176, 0.1);
+    }
+    
+    .btn-comprobante:hover {
+        background: rgba(156, 39, 176, 0.2);
+        border-color: #7b1fa2;
+    }
+    
+    .btn-eliminar {
+        border-color: #f44336;
+        color: #f44336;
+        background: rgba(244, 67, 54, 0.1);
+    }
+    
+    .btn-eliminar:hover {
+        background: rgba(244, 67, 54, 0.2);
+        border-color: #d32f2f;
+    }
+    
+    .btn-detalles {
+        border-color: #FF9800;
+        color: #FF9800;
+        background: rgba(255, 152, 0, 0.1);
+    }
+    
+    .btn-detalles:hover {
+        background: rgba(255, 152, 0, 0.2);
+        border-color: #e68900;
+    }
+    
+    /* RESPONSIVE */
+    @media (max-width: 1200px) {
+        .tabla-container {
+            border-radius: 10px;
+            margin: 0 -10px;
+            width: calc(100% + 20px);
+        }
+        
+        .estadisticas-pagos {
+            padding: 15px;
+        }
+        
+        .estadistica-item {
+            min-width: 100px;
+            padding: 12px;
+        }
+        
+        .estadistica-numero {
+            font-size: 24px;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .estadisticas-pagos {
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .estadistica-item {
+            width: 100%;
+        }
+        
+        .btn-actualizar {
+            width: 100%;
+            justify-content: center;
+        }
+        
+        .acciones-tabla {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .btn-tabla {
+            width: 35px;
+            height: 35px;
+        }
+        
+        .tabla-pagos th,
+        .tabla-pagos td {
+            padding: 12px 8px;
+            font-size: 0.9rem;
+        }
+        
+        .usuario-nombre {
+            font-size: 0.95rem;
+        }
+    }

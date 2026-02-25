@@ -1,0 +1,1593 @@
+/* styles/styles_pagos.css - VERSIÓN SIMPLIFICADA */
+
+/* 1. POSICIONAMIENTO Y FONDO */
+body {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: #1a1a1a !important;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 2. BARRA LATERAL */
+.sidebar-pagos {
+    width: 280px;
+    background: rgba(20, 20, 20, 0.95) !important;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow-y: auto;
+    z-index: 1000;
+    border-right: 2px solid #4B0082;
+}
+
+.sidebar-pagos .user-section {
+    padding: 30px 20px;
+    text-align: center;
+    border-bottom: 1px solid #333;
+}
+
+.sidebar-pagos .user-section h3 {
+    color: #9370DB;
+    margin: 15px 0 5px 0;
+    font-size: 1.2rem;
+}
+
+.sidebar-pagos .user-section p {
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+.sidebar-pagos .nav-container {
+    padding: 20px;
+}
+
+.sidebar-pagos .nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-pagos .nav-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    color: #bbb;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.sidebar-pagos .nav-item:hover {
+    background: rgba(147, 112, 219, 0.1);
+    color: #9370DB;
+}
+
+.sidebar-pagos .nav-item.active {
+    background: rgba(147, 112, 219, 0.2);
+    color: #9370DB;
+    border-left: 4px solid #9370DB;
+}
+
+.sidebar-pagos .nav-item i {
+    width: 25px;
+    margin-right: 15px;
+    font-size: 1.1rem;
+}
+
+.sidebar-pagos .logout-section {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+}
+
+/* 3. CONTENIDO PRINCIPAL */
+.content-pagos {
+    margin-left: 280px !important;
+    padding: 30px !important;
+    width: calc(100% - 280px) !important;
+    min-height: 100vh;
+    background: #1a1a1a !important;
+}
+
+/* 4. CONTENEDOR DEL MÓDULO */
+.modulo-pagos {
+    background: rgba(30, 30, 30, 0.9) !important;
+    border-radius: 15px !important;
+    padding: 30px !important;
+    border: 1px solid #4B0082 !important;
+    margin: 20px 0 !important;
+    max-width: 1200px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* 5. HEADER DEL MÓDULO */
+.modulo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #4B0082;
+    padding-bottom: 15px;
+}
+
+.modulo-header h2 {
+    color: #9370DB !important;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 !important;
+}
+
+/* 6. SECCIÓN MÉTODOS */
+.seccion-metodos {
+    margin: 30px 0 !important;
+}
+
+.seccion-metodos h3 {
+    color: white !important;
+    margin-bottom: 20px !important;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* 7. GRID DE MÉTODOS */
+.grid-metodos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)) !important;
+    gap: 20px !important;
+    margin-top: 20px !important;
+}
+
+/* 8. TARJETA DE MÉTODO */
+.tarjeta-metodo {
+    background: rgba(40, 40, 40, 0.8) !important;
+    border-radius: 12px !important;
+    padding: 20px !important;
+    border-left: 5px solid #4B0082 !important;
+    transition: all 0.3s !important;
+    cursor: pointer !important;
+}
+
+.tarjeta-metodo:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+.tarjeta-metodo.seleccionada {
+    border-left-color: #4CAF50 !important;
+    background: rgba(76, 175, 80, 0.1) !important;
+}
+
+/* 9. HEADER DE MÉTODO */
+.metodo-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.metodo-icono {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    background: rgba(147, 112, 219, 0.2) !important;
+    color: #9370DB !important;
+}
+
+.metodo-info h3 {
+    color: white !important;
+    margin: 0 0 5px 0 !important;
+    font-size: 1.2rem !important;
+}
+
+.metodo-hint {
+    color: #aaa;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.metodo-descripcion {
+    color: #bbb !important;
+    font-size: 0.9rem !important;
+    margin-bottom: 15px !important;
+    line-height: 1.5 !important;
+}
+
+.metodo-instrucciones {
+    background: rgba(0, 0, 0, 0.2) !important;
+    padding: 12px !important;
+    border-radius: 8px !important;
+    margin-bottom: 15px !important;
+}
+
+.metodo-instrucciones strong {
+    color: #9370DB !important;
+    display: block;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.metodo-instrucciones p {
+    color: #aaa !important;
+    font-size: 0.85rem !important;
+    line-height: 1.4 !important;
+    margin: 0 !important;
+}
+
+/* 10. FORMULARIO DE PAGO */
+.formulario-pago {
+    background: rgba(40, 40, 40, 0.95) !important;
+    border-radius: 12px !important;
+    padding: 25px !important;
+    margin: 30px 0 !important;
+    border: 2px solid #4B0082 !important;
+}
+
+.form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.form-header h3 {
+    color: #9370DB !important;
+    margin: 0 !important;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-volver {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: rgba(255, 152, 0, 0.2);
+    color: #FF9800;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-volver:hover {
+    background: rgba(255, 152, 0, 0.3);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group.full-width {
+    grid-column: span 2;
+}
+
+.form-group label {
+    color: #ddd;
+    margin-bottom: 8px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    background: rgba(20, 20, 20, 0.8) !important;
+    border: 1px solid #444 !important;
+    border-radius: 8px !important;
+    padding: 12px 15px !important;
+    color: white !important;
+    font-size: 0.95rem !important;
+    transition: 0.3s !important;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none !important;
+    border-color: #9370DB !important;
+    box-shadow: 0 0 0 2px rgba(147, 112, 219, 0.2) !important;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 60px;
+}
+
+.input-file-container {
+    position: relative;
+}
+
+.input-file {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.file-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    border: 2px dashed #4B0082;
+    border-radius: 8px;
+    background: rgba(147, 112, 219, 0.1);
+    color: #9370DB;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.file-label:hover {
+    background: rgba(147, 112, 219, 0.2);
+}
+
+.file-name {
+    margin-top: 10px;
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+.formato-archivos {
+    margin-top: 10px;
+    color: #888;
+    font-size: 0.85rem;
+}
+
+/* 11. INFORMACIÓN IMPORTANTE */
+.info-importante {
+    margin: 25px 0;
+}
+
+.advertencia {
+    background: rgba(255, 193, 7, 0.1);
+    border-left: 4px solid #FFC107;
+    padding: 15px 20px;
+    border-radius: 8px;
+}
+
+.advertencia h4 {
+    color: #FFC107;
+    margin: 0 0 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.advertencia p {
+    color: #ddd;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* 12. BOTÓN DE PAGO */
+.btn-pago {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    padding: 15px 30px !important;
+    background: #4B0082 !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 8px !important;
+    cursor: pointer !important;
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+    transition: 0.3s !important;
+    width: 100% !important;
+}
+
+.btn-pago:hover {
+    background: #5a1a99 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 5px 15px rgba(90, 26, 153, 0.3) !important;
+}
+
+.btn-pago:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* 13. ESTADOS DE CARGA Y ERROR */
+.cargando-metodos {
+    text-align: center;
+    padding: 50px;
+    color: #aaa;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(147, 112, 219, 0.2);
+    border-radius: 50%;
+    border-top-color: #9370DB;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.estado-vacio {
+    text-align: center;
+    padding: 50px 20px;
+    color: #888;
+}
+
+.estado-vacio i {
+    font-size: 3rem;
+    color: #4B0082;
+    margin-bottom: 20px;
+    opacity: 0.5;
+}
+
+.estado-vacio h4 {
+    margin: 0 0 10px 0;
+    color: #bbb;
+}
+
+.estado-vacio p {
+    margin: 0;
+    color: #777;
+}
+
+.estado-error {
+    text-align: center;
+    padding: 40px 20px;
+    color: #ff6b6b;
+    background: rgba(244, 67, 54, 0.1);
+    border-radius: 10px;
+    border: 1px solid rgba(244, 67, 54, 0.3);
+}
+
+.estado-error i {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.estado-error h4 {
+    margin: 0 0 10px 0;
+}
+
+.estado-error p {
+    margin: 0 0 20px 0;
+}
+
+.btn-reintentar {
+    padding: 10px 20px;
+    background: #4B0082;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-reintentar:hover {
+    background: #5a1a99;
+}
+
+/* 14. RESPONSIVE */
+@media (max-width: 768px) {
+    .sidebar-pagos {
+        width: 100%;
+        height: auto;
+        position: relative;
+        margin-bottom: 20px;
+    }
+    
+    .content-pagos {
+        margin-left: 0 !important;
+        width: 100% !important;
+        padding: 20px !important;
+    }
+    
+    .grid-metodos {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .modulo-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-group.full-width {
+        grid-column: span 1;
+    }
+    
+    .form-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .btn-volver {
+        align-self: flex-end;
+    }
+}
+
+
+
+/* Agrega esto al final de styles_pagos.css */
+
+/* Información de estados */
+.info-estado {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+    padding: 15px;
+    background: rgba(30, 30, 30, 0.8);
+    border-radius: 10px;
+    flex-wrap: wrap;
+}
+
+.badge-estado {
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.badge-estado.pendiente {
+    background: rgba(255, 152, 0, 0.2);
+    color: #FF9800;
+    border: 1px solid rgba(255, 152, 0, 0.3);
+}
+
+.badge-estado.atrasado {
+    background: rgba(244, 67, 54, 0.2);
+    color: #ff4444;
+    border: 1px solid rgba(244, 67, 54, 0.3);
+    animation: pulse 2s infinite;
+}
+
+.badge-estado.aprobado {
+    background: rgba(76, 175, 80, 0.2);
+    color: #4CAF50;
+    border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.badge-estado.rechazado {
+    background: rgba(183, 28, 28, 0.2);
+    color: #b71c1c;
+    border: 1px solid rgba(183, 28, 28, 0.3);
+}
+
+/* Observaciones */
+.pago-observaciones {
+    margin: 15px 0;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    border-left: 4px solid #9370DB;
+}
+
+.pago-observaciones strong {
+    color: #9370DB;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.pago-observaciones p {
+    color: #ddd;
+    margin: 0;
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+/* Botones de acción específicos */
+.btn-aprobar {
+    background: linear-gradient(135deg, #4CAF50, #2E7D32);
+    color: white;
+}
+
+.btn-aprobar:hover {
+    background: linear-gradient(135deg, #45a049, #1B5E20);
+}
+
+.btn-rechazar {
+    background: linear-gradient(135deg, #f44336, #c62828);
+    color: white;
+}
+
+.btn-rechazar:hover {
+    background: linear-gradient(135deg, #e53935, #b71c1c);
+}
+
+/* Alertas en estadísticas */
+.estadistica-item.alerta .estadistica-numero {
+    color: #ff4444;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Mejoras para estado atrasado */
+.tarjeta-pago.atrasado .pago-estado .estado-badge {
+    animation: shake 0.5s infinite alternate;
+}
+
+@keyframes shake {
+    from { transform: translateX(-2px); }
+    to { transform: translateX(2px); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .info-estado {
+        flex-direction: column;
+    }
+    
+    .badge-estado {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .pago-acciones {
+        flex-direction: column;
+    }
+    
+    .btn-accion {
+        width: 100%;
+    }
+}
+
+
+/* Estadísticas */
+.estadisticas-pagos {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: rgba(40, 40, 40, 0.8);
+    border-radius: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.estadistica-item {
+    flex: 1;
+    min-width: 100px;
+    text-align: center;
+    padding: 10px;
+    background: rgba(30, 30, 30, 0.9);
+    border-radius: 8px;
+}
+
+.estadistica-numero {
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+    color: #9370DB;
+    margin-bottom: 5px;
+}
+
+.estadistica-texto {
+    font-size: 12px;
+    color: #aaa;
+    text-transform: uppercase;
+}
+
+.btn-actualizar {
+    background: #4B0082;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Tarjeta de pago */
+.tarjeta-pago {
+    background: rgba(40, 40, 40, 0.8);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-left: 4px solid #FF9800;
+}
+
+.tarjeta-pago.atrasado {
+    border-left-color: #ff4444;
+    background: rgba(255, 68, 68, 0.1);
+}
+
+.pago-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.pago-id {
+    color: white;
+}
+
+.pago-id strong {
+    font-size: 1.1rem;
+}
+
+.usuario-id {
+    font-size: 0.85rem;
+    color: #aaa;
+    background: rgba(0,0,0,0.3);
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+
+.pago-estado {
+    text-align: right;
+}
+
+.estado-badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: white;
+}
+
+.estado-badge.pendiente {
+    background: #FF9800;
+}
+
+.estado-badge.atrasado {
+    background: #ff4444;
+}
+
+.pago-fecha {
+    font-size: 0.85rem;
+    color: #aaa;
+    margin-top: 5px;
+}
+
+/* Detalles */
+.pago-detalles {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    margin: 15px 0;
+    padding: 10px;
+    background: rgba(0,0,0,0.2);
+    border-radius: 6px;
+}
+
+.detalle-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.detalle-label {
+    color: #bbb;
+    font-size: 0.9rem;
+}
+
+.detalle-valor {
+    color: white;
+    font-weight: 500;
+}
+
+.detalle-valor.monto {
+    color: #4CAF50;
+    font-size: 1.1rem;
+}
+
+/* Información del usuario */
+.pago-info-usuario {
+    margin: 10px 0;
+    padding: 10px;
+    background: rgba(147, 112, 219, 0.1);
+    border-radius: 6px;
+    border-left: 3px solid #9370DB;
+}
+
+.pago-info-usuario strong {
+    color: #9370DB;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 5px;
+}
+
+.pago-info-usuario p {
+    color: #ddd;
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* Acciones */
+.pago-acciones {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.btn-accion {
+    flex: 1;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: white;
+}
+
+.btn-verificar {
+    background: #4CAF50;
+}
+
+.btn-verificar:hover {
+    background: #45a049;
+}
+
+.btn-rechazar {
+    background: #f44336;
+}
+
+.btn-rechazar:hover {
+    background: #d32f2f;
+}
+
+.btn-comprobante {
+    background: #2196F3;
+}
+
+.btn-comprobante:hover {
+    background: #1976D2;
+}
+
+/* Estados */
+.estado-vacio, .estado-error {
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.estado-vacio {
+    background: rgba(76, 175, 80, 0.1);
+    color: #4CAF50;
+    border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.estado-error {
+    background: rgba(244, 67, 54, 0.1);
+    color: #f44336;
+    border: 1px solid rgba(244, 67, 54, 0.3);
+}
+
+.btn-reintentar {
+    background: #4B0082;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+/* ============================================= */
+/* ESTILOS MEJORADOS PARA MIS PAGOS */
+/* ============================================= */
+
+/* Contenedor principal de pagos */
+.contenedor-pagos-usuario {
+    margin-top: 20px;
+}
+
+/* Tarjeta de pago mejorada */
+.tarjeta-pago-usuario {
+    background: rgba(35, 35, 35, 0.95);
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-left: 5px solid #FF9800;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.tarjeta-pago-usuario::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(255, 152, 0, 0.8), transparent);
+    z-index: 1;
+}
+
+.tarjeta-pago-usuario:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.25);
+    border-color: #FFC107;
+}
+
+.tarjeta-pago-usuario.aprobado {
+    border-left-color: #4CAF50;
+}
+
+.tarjeta-pago-usuario.aprobado::before {
+    background: linear-gradient(to bottom, rgba(76, 175, 80, 0.8), transparent);
+}
+
+.tarjeta-pago-usuario.aprobado:hover {
+    border-color: #8BC34A;
+}
+
+.tarjeta-pago-usuario.pendiente {
+    border-left-color: #FF9800;
+}
+
+.tarjeta-pago-usuario.pendiente::before {
+    background: linear-gradient(to bottom, rgba(255, 152, 0, 0.8), transparent);
+}
+
+.tarjeta-pago-usuario.pendiente:hover {
+    border-color: #FFC107;
+}
+
+.tarjeta-pago-usuario.rechazado {
+    border-left-color: #F44336;
+}
+
+.tarjeta-pago-usuario.rechazado::before {
+    background: linear-gradient(to bottom, rgba(244, 67, 54, 0.8), transparent);
+}
+
+.tarjeta-pago-usuario.rechazado:hover {
+    border-color: #E57373;
+}
+
+/* Encabezado de tarjeta */
+.encabezado-pago {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-principal-pago {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.estado-pago {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: rgba(255, 152, 0, 0.15);
+    color: #FFC107;
+    border: 1px solid rgba(255, 152, 0, 0.3);
+}
+
+.tarjeta-pago-usuario.aprobado .estado-pago {
+    background: rgba(76, 175, 80, 0.15);
+    color: #4CAF50;
+    border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.tarjeta-pago-usuario.rechazado .estado-pago {
+    background: rgba(244, 67, 54, 0.15);
+    color: #F44336;
+    border: 1px solid rgba(244, 67, 54, 0.3);
+}
+
+.estado-pago i {
+    font-size: 1rem;
+}
+
+.numero-pago {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    background: rgba(75, 0, 130, 0.2);
+    padding: 6px 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(147, 112, 219, 0.3);
+}
+
+.fecha-pago {
+    font-size: 0.9rem;
+    color: #94A3B8;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(30, 30, 30, 0.8);
+    padding: 8px 15px;
+    border-radius: 10px;
+    border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+/* Detalles del pago */
+.detalles-pago {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.item-detalle {
+    background: rgba(40, 40, 40, 0.6);
+    border-radius: 10px;
+    padding: 15px;
+    transition: all 0.3s ease;
+}
+
+.item-detalle:hover {
+    background: rgba(50, 50, 50, 0.8);
+    transform: translateY(-2px);
+}
+
+.etiqueta-detalle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #94A3B8;
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}
+
+.valor-detalle {
+    color: #FFFFFF;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.valor-detalle.monto {
+    color: #4CAF50;
+    font-size: 1.3rem;
+}
+
+/* Información adicional */
+.info-extra-pago {
+    margin-top: 20px;
+}
+
+.contenedor-observaciones {
+    background: rgba(147, 112, 219, 0.1);
+    border-radius: 10px;
+    padding: 18px;
+    border-left: 4px solid #9370DB;
+    margin-bottom: 15px;
+}
+
+.contenedor-observaciones h4 {
+    color: #9370DB;
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.texto-observaciones {
+    color: #E2E8F0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.contenedor-motivo-rechazo {
+    background: rgba(244, 67, 54, 0.1);
+    border-radius: 10px;
+    padding: 18px;
+    border-left: 4px solid #F44336;
+    margin-bottom: 15px;
+}
+
+.contenedor-motivo-rechazo h4 {
+    color: #F44336;
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.texto-motivo-rechazo {
+    color: #FFCDD2;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Botones de acción */
+.contenedor-acciones {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: flex-end;
+}
+
+.boton-comprobante {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #2196F3, #1976D2);
+    color: white !important;
+    padding: 12px 25px;
+    border-radius: 10px;
+    text-decoration: none !important;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(33, 150, 243, 0.3);
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.boton-comprobante::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.boton-comprobante:hover {
+    background: linear-gradient(135deg, #1976D2, #1565C0);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(33, 150, 243, 0.3);
+    text-decoration: none !important;
+}
+
+.boton-comprobante:hover::before {
+    left: 100%;
+}
+
+/* Estado vacío */
+.estado-vacio-pagos {
+    text-align: center;
+    padding: 80px 40px;
+    background: rgba(40, 40, 40, 0.8);
+    border-radius: 15px;
+    border: 2px dashed rgba(147, 112, 219, 0.3);
+    margin: 30px 0;
+}
+
+.icono-vacio {
+    width: 100px;
+    height: 100px;
+    background: rgba(147, 112, 219, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    border: 2px solid rgba(147, 112, 219, 0.3);
+}
+
+.icono-vacio i {
+    font-size: 3rem;
+    color: rgba(147, 112, 219, 0.5);
+}
+
+.estado-vacio-pagos h3 {
+    color: #F8FAFC;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.estado-vacio-pagos p {
+    color: #94A3B8;
+    font-size: 1rem;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.boton-primer-pago {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(135deg, #800080, #4B0082);
+    color: white !important;
+    padding: 14px 30px;
+    border-radius: 10px;
+    text-decoration: none !important;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(147, 112, 219, 0.3);
+    box-shadow: 0 4px 15px rgba(128, 0, 128, 0.3);
+}
+
+.boton-primer-pago:hover {
+    background: linear-gradient(135deg, #4B0082, #800080);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(128, 0, 128, 0.4);
+    text-decoration: none !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .tarjeta-pago-usuario {
+        padding: 20px;
+    }
+    
+    .encabezado-pago {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+    
+    .info-principal-pago {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .fecha-pago {
+        align-self: flex-start;
+    }
+    
+    .detalles-pago {
+        grid-template-columns: 1fr;
+    }
+    
+    .contenedor-acciones {
+        justify-content: center;
+    }
+    
+    .boton-comprobante {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .info-principal-pago {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .estado-pago {
+        align-self: flex-start;
+    }
+    
+    .numero-pago {
+        align-self: flex-start;
+    }
+}
+
+
+/*pestañas */
+.contenedor-pestanas {
+    display: flex;
+    gap: 5px;
+    background: rgba(40, 40, 40, 0.9);
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(147, 112, 219, 0.2);
+}
+
+.pestana {
+    flex: 1;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(75, 0, 130, 0.3);
+    color: #C4B5FD;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.pestana:hover {
+    background: rgba(75, 0, 130, 0.5);
+    transform: translateY(-2px);
+}
+
+.pestana.activa {
+    background: linear-gradient(135deg, #800080, #4B0082);
+    color: white;
+    box-shadow: 0 4px 10px rgba(128, 0, 128, 0.3);
+}
+
+/* Colores por estado */
+.pestana[data-estado="todos"] {
+    border-left: 3px solid #9370DB;
+}
+
+.pestana[data-estado="pendiente"] {
+    border-left: 3px solid #FFC107;
+}
+
+.pestana[data-estado="aprobado"] {
+    border-left: 3px solid #4CAF50;
+}
+
+.pestana[data-estado="rechazado"] {
+    border-left: 3px solid #F44336;
+}
+
+
+
+/* Animación para el cambio de pestaña */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulseActive {
+    0% {
+        box-shadow: 0 4px 10px rgba(128, 0, 128, 0.3);
+    }
+    50% {
+        box-shadow: 0 4px 15px rgba(128, 0, 128, 0.5);
+    }
+    100% {
+        box-shadow: 0 4px 10px rgba(128, 0, 128, 0.3);
+    }
+}
+
+@keyframes loadingBar {
+    0% {
+        width: 0%;
+        left: 0;
+    }
+    50% {
+        width: 100%;
+        left: 0;
+    }
+    100% {
+        width: 0%;
+        left: 100%;
+    }
+}
+
+/* Animación para botones de pestaña */
+.pestana {
+    position: relative;
+    overflow: hidden;
+}
+
+.pestana::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #9370DB, #4B0082);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.pestana.activa::after {
+    transform: scaleX(1);
+}
+
+.pestana.activa {
+    animation: pulseActive 2s infinite;
+}
+
+/* Animación específica por estado al activar */
+.pestana[data-estado="todos"].activa {
+    animation: pulseActive 2s infinite, glowPurple 2s infinite;
+}
+
+.pestana[data-estado="pendiente"].activa {
+    animation: pulseActive 2s infinite, glowOrange 2s infinite;
+}
+
+.pestana[data-estado="aprobado"].activa {
+    animation: pulseActive 2s infinite, glowGreen 2s infinite;
+}
+
+.pestana[data-estado="rechazado"].activa {
+    animation: pulseActive 2s infinite, glowRed 2s infinite;
+}
+
+@keyframes glowPurple {
+    0%, 100% {
+        box-shadow: 0 4px 10px rgba(147, 112, 219, 0.3);
+    }
+    50% {
+        box-shadow: 0 4px 15px rgba(147, 112, 219, 0.5);
+    }
+}
+
+@keyframes glowOrange {
+    0%, 100% {
+        box-shadow: 0 4px 10px rgba(255, 193, 7, 0.3);
+    }
+    50% {
+        box-shadow: 0 4px 15px rgba(255, 193, 7, 0.5);
+    }
+}
+
+@keyframes glowGreen {
+    0%, 100% {
+        box-shadow: 0 4px 10px rgba(76, 175, 80, 0.3);
+    }
+    50% {
+        box-shadow: 0 4px 15px rgba(76, 175, 80, 0.5);
+    }
+}
+
+@keyframes glowRed {
+    0%, 100% {
+        box-shadow: 0 4px 10px rgba(244, 67, 54, 0.3);
+    }
+    50% {
+        box-shadow: 0 4px 15px rgba(244, 67, 54, 0.5);
+    }
+}
+
+/* Contenedor de carga con animación */
+.contenedor-carga {
+    position: relative;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.barra-progreso {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #9370DB, #4B0082);
+    animation: loadingBar 1.5s ease-in-out infinite;
+}
+
+.spinner-cargando {
+    width: 60px;
+    height: 60px;
+    border: 4px solid rgba(147, 112, 219, 0.1);
+    border-radius: 50%;
+    border-top-color: #9370DB;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+.spinner-cargando.azul {
+    border-top-color: #2196F3;
+}
+
+.spinner-cargando.verde {
+    border-top-color: #4CAF50;
+}
+
+.spinner-cargando.naranja {
+    border-top-color: #FF9800;
+}
+
+.spinner-cargando.rojo {
+    border-top-color: #F44336;
+}
+
+/* Animación para las tarjetas de pago */
+.tarjeta-pago-usuario {
+    animation: fadeInUp 0.5s ease-out forwards;
+}
+
+/* Retrasos escalonados para tarjetas */
+.tarjeta-pago-usuario:nth-child(1) { animation-delay: 0.1s; }
+.tarjeta-pago-usuario:nth-child(2) { animation-delay: 0.2s; }
+.tarjeta-pago-usuario:nth-child(3) { animation-delay: 0.3s; }
+.tarjeta-pago-usuario:nth-child(4) { animation-delay: 0.4s; }
+.tarjeta-pago-usuario:nth-child(5) { animation-delay: 0.5s; }
+.tarjeta-pago-usuario:nth-child(n+6) { animation-delay: 0.6s; }
+
+/* Animación para estado vacío */
+.estado-vacio-pagos {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Transición suave para todo el contenedor */
+.contenedor-pagos-usuario {
+    transition: opacity 0.3s ease;
+}
+
+.contenedor-pagos-usuario.cambiando {
+    opacity: 0.5;
+}

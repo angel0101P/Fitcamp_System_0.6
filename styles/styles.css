@@ -1,0 +1,472 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    /* Fondo Morado Minimalista: Degradado suave de morado profundo a casi negro */
+    background: radial-gradient(circle at 70% 50%, #2e0854 0%, #12051a 100%);
+    background-attachment: fixed;
+    color: #f8fafc;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.main-wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-end;
+    padding-right: 10%;
+}
+
+.contenedor-imagen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Centra el logo y el bloque de texto horizontalmente */
+    justify-content: center;
+    text-align: center;
+    /* Asegura que el contenido interno se alinee al centro */
+    margin: 40px auto 30px auto;
+    width: 100%;
+    max-width: 800px;
+    /* Evita que el texto se estire demasiado en pantallas anchas */
+}
+
+
+.logo-main {
+    width: 220px;
+    height: auto;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 20px rgba(138, 43, 226, 0.6));
+    animation: flotar 4s ease-in-out infinite;
+}
+
+
+
+.mensaje-txt {
+    font-size: 2.2rem;
+    font-weight: 900;
+    font-style: italic;
+    text-align: center;
+    /* <--- Esto centra las líneas de texto entre sí */
+    text-transform: uppercase;
+    line-height: 1.2;
+    background: linear-gradient(180deg, #ffffff 50%, #bc8cf2 100%);
+    /* Primero la versión estándar */
+    background-clip: text;
+    /* Luego la versión para navegadores basados en Webkit (Chrome, Safari, Edge) */
+    -webkit-background-clip: text;
+    /* Importante: el color del texto debe ser transparente para ver el degradado */
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    /* Refuerzo para estándares */
+    filter: drop-shadow(0 5px 15px rgba(138, 43, 226, 0.4));
+    /* Control de ancho para el centrado propio */
+    display: inline-block;
+    /* Hace que el bloque se ajuste al contenido */
+    max-width: 90%;
+    /* Margen de seguridad en móviles */
+    margin: 0 auto;
+    /* Centrado extra */
+}
+
+
+.contenedor-imagen img {
+    max-width: 350px;
+    animation: heartbeat-logo 4s infinite ease-in-out;
+
+}
+
+.contenedor {
+    /* Fondo Negro con un toque de azul/morado muy sutil (Alpha 0.75 para oscuridad) */
+    background: rgba(15, 10, 20, 0.75);
+
+    /* El desenfoque ayuda a que el color del fondo de la web se mezcle con el negro */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    padding: 30px 40px;
+    border-radius: 20px;
+    width: 350px;
+
+    /* Borde neón morado: es lo que da el "toque" sin aclarar el fondo */
+    border: 1px solid rgba(138, 43, 226, 0.5);
+
+    /* Sombra externa negra y un resplandor (glow) morado muy suave */
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8),
+        0 0 15px rgba(138, 43, 226, 0.2);
+
+    margin-right: 10%;
+    margin-left: auto;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+/* Al pasar el mouse, el morado "despierta" un poco más */
+.contenedor:hover {
+    transform: translateY(-5px);
+    border: 1px solid rgba(138, 43, 226, 0.8);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.9),
+        0 0 25px rgba(138, 43, 226, 0.4);
+}
+
+
+/* TABS Y BOTONES (Tus colores destacados) */
+.tabs {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.tab {
+    background: none;
+    border: none;
+    color: #b0b0b0;
+    padding-bottom: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    transition: 0.3s;
+    border-bottom: 2px solid transparent;
+}
+
+.tab.active {
+    color: #9370DB;
+    /* Morado claro de tus links activos */
+    border-bottom: 2px solid #9370DB;
+}
+
+/* Enlace simulado dentro del párrafo */
+.link-tab {
+    color: #9370DB;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+    text-decoration: underline transparent;
+}
+
+.link-tab:hover {
+    color: #ffffff;
+    text-decoration: underline #9370DB;
+}
+
+/* ESTILO DE INPUTS FITCAMP 2026 */
+input {
+    width: 100%;
+    padding: 12px 5px;
+    /* Espaciado interno */
+    margin-bottom: 20px;
+    /* Separación entre campos */
+    background: transparent;
+    /* Fondo transparente para el modo oscuro */
+    border: none;
+    border-bottom: 1px solid #4B0082;
+    /* Línea morada oscura (como tus bordes de tabla) */
+    color: #ffffff;
+    /* Texto blanco para lectura clara */
+    outline: none;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    /* Transmisión suave para la animación */
+}
+
+/* Animación al hacer clic (Focus) */
+input:focus {
+    border-bottom: 1px solid #9370DB;
+    /* Cambia al morado claro de tus links activos */
+    background: rgba(147, 112, 219, 0.05);
+    /* Un destello morado casi invisible al fondo */
+    padding-left: 10px;
+    /* Efecto de desplazamiento a la derecha */
+}
+
+/* Color del placeholder (el texto de guía) */
+input::placeholder {
+    color: #666;
+    font-size: 0.85rem;
+}
+
+/* 2. AJUSTE COMPACTO PARA EL FORMULARIO */
+.form-contenedor {
+    width: 100%;
+    overflow-y: auto;
+    /* Si el registro es muy largo, permite scroll interno */
+    padding-right: 5px;
+    /* Espacio para el scrollbar */
+}
+
+/* Estilo del scrollbar interno (estilo Fitcamp) */
+.form-contenedor::-webkit-scrollbar {
+    width: 3px;
+}
+
+.form-contenedor::-webkit-scrollbar-thumb {
+    background: #800080;
+    border-radius: 10px;
+}
+
+/* 3. REDUCCIÓN DE MÁRGENES EN INPUTS */
+.form-contenedor input {
+    margin-bottom: 12px;
+    /* Espacio más ajustado entre campos */
+    padding: 10px 5px;
+}
+
+/* Ajuste para los encabezados de los formularios */
+.form-contenedor h2 {
+    color: #ffffff;
+    font-weight: 500;
+    margin-bottom: 25px;
+    font-size: 1.3rem;
+    /* Título un poco más pequeño */
+    margin-bottom: 20px;
+    border-left: 4px solid #800080;
+    /* Detalle morado al lado del título */
+    padding-left: 15px;
+}
+
+/* BOTÓN PRINCIPAL (Consistente con tu sistema Fitcamp) */
+button.btn-primary {
+    background: #800080;
+    /* Tu morado principal */
+    color: white;
+    border: none;
+    margin-top: 10px;
+    /* Pegamos más el botón al último input */
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    width: 100%;
+    cursor: pointer;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+button.btn-primary:active {
+    transform: scale(0.98);
+    /* Se hunde un poco al pulsar */
+    background-color: #310055 !important;
+    transition: 0.1s;
+}
+
+
+button.btn-primary:hover {
+    background: #4B0082;
+    /* El morado más oscuro de tus bordes */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(128, 0, 128, 0.4);
+}
+
+
+/* ESTILO PARA EL TEXTO DE "YA TIENES CUENTA" */
+p {
+    font-size: 0.8rem;
+    color: #b0b0b0;
+    /* Gris de tus nav-items */
+    text-align: center;
+    margin: 15px 0;
+}
+
+/* ANIMACIONES */
+.form-contenedor {
+    display: none;
+}
+
+.form-contenedor.active {
+    display: block;
+    animation: fadeInScale 0.5s ease-out forwards;
+}
+
+
+/* --- KEYFRAMES --- */
+
+/* Aparecer desde la derecha con desvanecimiento */
+@keyframes slideInRight {
+    0% {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Aparecer con escala sutil (para los formularios) */
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.95) translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Animación de balanceo suave */
+@keyframes flotar {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Efecto de flotación para el logo marca de agua */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* AJUSTE MÓVIL */
+@media (max-width: 768px) {
+    .main-wrapper {
+        padding-right: 0;
+        justify-content: center;
+    }
+
+    .contenedor-imagen {
+        left: 50%;
+        top: 20%;
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes heartbeat-logo {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.08;
+    }
+
+    50% {
+        transform: scale(1.03);
+        opacity: 0.8;
+        /* El logo "brilla" un poco más en el centro del latido */
+    }
+}
+
+/* Forzar que todos los botones de los formularios sean morados */
+.form-contenedor button,
+.btn-primary {
+    background-color: #800080 !important;
+    /* Tu morado Fitcamp */
+    color: #ffffff !important;
+    border: none !important;
+    padding: 14px !important;
+    border-radius: 8px !important;
+    font-weight: bold !important;
+    width: 100% !important;
+    cursor: pointer !important;
+    text-transform: uppercase !important;
+    transition: 0.3s all ease !important;
+    display: block !important;
+    margin-top: 20px !important;
+}
+
+/* Efecto Hover para ambos botones */
+.form-contenedor button:hover,
+.btn-primary:hover {
+    background-color: #4B0082 !important;
+    /* Morado oscuro al pasar el mouse */
+    transform: translateY(-2px) !important;
+    box-shadow: 0 5px 15px rgba(128, 0, 128, 0.4) !important;
+}
+
+/* Spinner para el botón */
+.spinner {
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    animation: spin 0.8s linear infinite;
+    margin-right: 8px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Estilo para la barra de fortaleza */
+input[name="password"]:focus+div {
+    opacity: 1;
+}
+
+
+/* Estilos para el select desplegable */
+.select-container {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.form-select {
+    width: 100%;
+    padding: 12px 15px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #4B0082;
+    color: #ffffff;
+    font-size: 0.95rem;
+    outline: none;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    transition: all 0.3s ease;
+}
+
+/* Flecha personalizada */
+.select-container::after {
+    content: '▼';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9370DB;
+    font-size: 0.8rem;
+    pointer-events: none;
+}
+
+.form-select:focus {
+    border-bottom: 1px solid #9370DB;
+    background: rgba(147, 112, 219, 0.05);
+}
+
+/* Estilo de las opciones */
+.form-select option {
+    background: #1a1a1a;
+    color: #ffffff;
+    padding: 10px;
+}

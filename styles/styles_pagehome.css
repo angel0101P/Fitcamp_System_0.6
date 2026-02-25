@@ -1,0 +1,253 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    line-height: 1.6;
+    color: #f4f4f4;
+    background-color: #0e0e1a;
+}
+
+
+header {
+    background: #1a1a2e;
+    padding: 8px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 2px solid #6a0dad;
+    box-shadow: 0 4px 15px rgba(106, 13, 173, 0.3);
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- LOGO, TEXTO Y ANIMACIÓN --- */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #b743ec;
+    cursor: pointer;
+}
+
+.logo-img {
+    height: 55px;
+    width: auto;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(183, 67, 236, 0.5);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.logo:hover .logo-img {
+    transform: scale(1.15) rotate(5deg);
+    box-shadow: 0 0 20px rgba(183, 67, 236, 0.9);
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+@media (min-width: 769px) {
+    .logo-text { flex-direction: row; gap: 6px; font-size: 1.4rem; }
+}
+
+
+nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+nav ul li {
+    margin-left: 20px;
+    position: relative;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* LA ANIMACIÓN DE LA BARRITA BAJO EL LINK */
+nav ul li a:not(.btn-login, .btn-register)::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #b743ec;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+nav ul li a:not(.btn-login, .btn-register):hover::after {
+    visibility: visible;
+    width: 100%;
+}
+
+nav ul li a:hover {
+    color: #b743ec;
+}
+
+/* =========================================
+   4. BOTONES DE ACCESO (LOGIN/REGISTRO)
+   ========================================= */
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+    margin-left: 25px;
+}
+
+/* =========================================
+   3. BOTONES DE ACCESO (LOGIN/REGISTRO)
+   ========================================= */
+.auth-buttons {
+    display: flex;       /* Los pone uno al lado del otro */
+    align-items: center;
+    gap: 12px;           /* Espacio entre los dos botones */
+    margin-left: 25px;   /* Separación del resto del menú en PC */
+}
+
+.btn-login {
+    border: 1px solid #b743ec;
+    padding: 8px 18px;
+    border-radius: 5px;
+    color: #fff !important;
+    font-weight: bold;
+    text-shadow: 0 0 8px rgba(183, 67, 236, 0.8);
+    background: transparent;
+    transition: all 0.3s ease;
+    text-align: center;
+    white-space: nowrap; /* Evita que el texto se parta en dos líneas */
+}
+
+.btn-register {
+    border: 1px solid rgba(183, 67, 236, 0.5);
+    padding: 8px 18px;
+    border-radius: 5px;
+    color: #a0aec0 !important;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.btn-login:hover { 
+    background: #b743ec; 
+    transform: translateY(-2px); 
+}
+
+.btn-register:hover { 
+    border-color: #b743ec; 
+    color: #fff !important; 
+    background: rgba(183, 67, 236, 0.1); 
+}
+
+/* =========================================
+   5. SECCIONES Y MARCA DE AGUA
+   ========================================= */
+section {
+    padding: 120px 20px 60px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#inicio, #Servicios { background-color: #0e0e1a; }
+#Sobre, #Contactos { background-color: #161625; }
+
+section::before {
+    content: "";
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url(../images/Fitcamp_Logo.png); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 50vh; height: 50vh;
+    opacity: 0.04;
+    z-index: 0;
+    pointer-events: none;
+}
+
+h1 { font-size: 2.8rem; color: #8b5cf6; z-index: 1; margin-bottom: 1rem; }
+p { font-size: 1.1rem; max-width: 700px; color: #a0aec0; z-index: 1; }
+
+/* =========================================
+   6. VISTA CELULAR 
+   ========================================= */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav ul {
+        flex-direction: row;    /* Mantiene Inicio, Sobre, etc en línea */
+        flex-wrap: wrap;        /* Si no caben, bajan ordenadamente */
+        justify-content: center;
+        gap: 15px;
+        width: 100%;
+    }
+
+    /* BOTONES ABAJO JUNTOS Y ORDENADOS */
+    .auth-buttons {
+        margin: 10px 0 0 0;     /* Separa los botones de los links de arriba */
+        width: 100%;            /* Ocupa todo el ancho disponible */
+        justify-content: center;/* Los centra en la pantalla */
+        padding-top: 10px;
+        border-top: 1px solid rgba(183, 67, 236, 0.1);
+        gap: 10px;              /* Espacio exacto entre ambos */
+    }
+
+    .btn-login, .btn-register {
+        flex: 1;                /* Hace que ambos botones midan lo mismo */
+        max-width: 140px;       /* Pero que no sean exageradamente largos */
+        font-size: 0.8rem;
+        padding: 8px 5px;
+    }
+
+    section {
+        padding-top: 190px !important; /* Espacio para que el menú no tape nada */
+    }
+}
+
+    h1 {
+        font-size: 1.7rem;
+        margin-top: 10px;
+    }
+
+
+footer { background: #000; color: #6a0dad; text-align: center; padding: 1.5rem; }

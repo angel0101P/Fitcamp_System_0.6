@@ -1,0 +1,235 @@
+.modal-compra-content.panel {
+	max-height: 90vh;
+	overflow-y: auto;
+}
+.modal-compra-content .input-field,
+.modal-compra-content select,
+.modal-compra-content textarea {
+	background: #23202b;
+	color: #f8fafc;
+	border: 1.2px solid #4B0082;
+	margin-top: 4px;
+	font-size: 1rem;
+	transition: border 0.2s, background 0.2s;
+}
+.modal-compra-content .input-field:focus,
+.modal-compra-content select:focus,
+.modal-compra-content textarea:focus {
+	border-color: #9370DB;
+	background: #18141f;
+	color: #fff;
+}
+.modal-compra-content label {
+	color: #ffb300;
+	font-weight: 600;
+	letter-spacing: 0.01em;
+}
+.modal-compra-content option {
+	background: #23202b;
+	color: #f8fafc;
+}
+.modal-compra-content textarea::placeholder,
+.modal-compra-content input::placeholder {
+	color: #b0b0b0;
+	opacity: 1;
+}
+.modal-compra-content .mensaje-resultado {
+	color: #fff;
+	font-weight: 600;
+	letter-spacing: 0.01em;
+}
+/* Modal emergente tipo app de compras */
+.modal-compra {
+	position: fixed;
+	z-index: 10000;
+	left: 0; top: 0; width: 100vw; height: 100vh;
+	display: flex; align-items: center; justify-content: center;
+}
+.modal-compra-bg {
+	position: absolute; left: 0; top: 0; width: 100vw; height: 100vh;
+	background: rgba(0,0,0,0.32);
+	z-index: 1;
+}
+.modal-compra-content {
+	position: relative;
+	z-index: 2;
+	background: #fff;
+	border-radius: 12px;
+	box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+	padding: 32px 24px 20px 24px;
+	min-width: 320px; max-width: 420px;
+	width: 95vw;
+	outline: none;
+}
+.modal-close {
+	position: absolute; right: 16px; top: 12px;
+	background: none; border: none; font-size: 2rem; color: #888; cursor: pointer;
+	transition: color 0.2s;
+}
+.modal-close:hover { color: #ff9900; }
+.modal-producto-info {
+	display: flex; align-items: center; gap: 18px; margin-bottom: 18px;
+}
+.modal-img {
+	width: 80px; height: 80px; object-fit: contain; border-radius: 8px; background: #fffbe7; border: 1px solid #e2e2e2;
+}
+.modal-producto-info h3 { margin: 0 0 4px 0; font-size: 1.13rem; color: #222; }
+.modal-producto-info p { margin: 0; color: #ff9900; font-weight: 700; font-size: 1.08rem; }
+.modal-compra-content .form-row { margin-top: 12px; }
+.modal-compra-content label { font-weight: 500; color: #333; }
+.modal-compra-content .input-field, .modal-compra-content select, .modal-compra-content textarea {
+	width: 100%; padding: 7px 8px; border-radius: 5px; border: 1.2px solid #e2e2e2; margin-top: 4px; font-size: 1rem;
+}
+.modal-compra-content .input-field:focus, .modal-compra-content select:focus, .modal-compra-content textarea:focus {
+	border-color: #ff9900; outline: none;
+}
+.modal-compra-content .btn-primary {
+	background: #ff9900; color: #fff; border: none; border-radius: 5px; padding: 9px 18px; font-size: 1.05rem; font-weight: 600; cursor: pointer; margin-top: 8px;
+	transition: background 0.18s;
+}
+.modal-compra-content .btn-primary:hover { background: #e88a00; }
+.modal-compra-content .mensaje-resultado { margin-top: 10px; min-height: 18px; }
+@media(max-width:600px){
+	.modal-compra-content{padding:16px 4vw;min-width:0;max-width:98vw;}
+	.modal-producto-info{flex-direction:column;align-items:flex-start;gap:8px;}
+}
+/* --- Catálogo y modal integrados a la paleta Fitcamp --- */
+.herbalife-layout {
+	display: flex;
+	gap: 24px;
+	flex-wrap: wrap;
+}
+.herbalife-left {
+	flex: 1;
+	min-width: 320px;
+}
+.herbalife-right {
+	flex: 2;
+	min-width: 360px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+.panel {
+	background: rgba(30,30,30,0.95);
+	padding: 18px 18px 14px 18px;
+	border-radius: 12px;
+	border: 1.5px solid #4B0082;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+.panel h3 {
+	margin: 0 0 10px 0;
+	font-size: 1.15rem;
+	color: #f8fafc;
+}
+.muted {
+	color: #b0b0b0;
+	font-size: 0.97rem;
+}
+.form-row {
+	margin-top: 12px;
+}
+.actions {
+	display: flex;
+	justify-content: flex-end;
+}
+.grid-listado {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+	gap: 18px;
+	margin-top: 10px;
+}
+.card-grid-item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	padding: 14px 10px 16px 10px;
+	background: #181818;
+	border-radius: 12px;
+	border: 1.5px solid #4B0082;
+	transition: box-shadow 0.2s, border 0.2s;
+	box-shadow: 0 1px 6px rgba(75,0,130,0.08);
+}
+.card-grid-item:hover {
+	border: 1.5px solid #9370DB;
+	box-shadow: 0 4px 16px rgba(147,112,219,0.13);
+}
+.card-grid-item img {
+	width: 120px;
+	height: 120px;
+	object-fit: contain;
+	background: #232323;
+	border-radius: 8px;
+	border: 1.5px solid #4B0082;
+	margin-bottom: 8px;
+	box-shadow: 0 1px 4px rgba(75,0,130,0.10);
+}
+.card-grid-body {
+	padding-top: 4px;
+}
+.card-grid-body h4 {
+	font-size: 1.01rem;
+	margin: 0 0 4px 0;
+	color: #f8fafc;
+	font-weight: 500;
+}
+.price {
+	color: #ffb300;
+	font-weight: 700;
+	font-size: 1.08rem;
+	margin-bottom: 6px;
+}
+.btn-outline {
+	background: #1e1e1e;
+	border: 1.5px solid #9370DB;
+	color: #9370DB;
+	padding: 7px 14px;
+	border-radius: 6px;
+	cursor: pointer;
+	font-weight: 600;
+	font-size: 0.98rem;
+	transition: background 0.15s, color 0.15s;
+}
+.btn-outline:hover {
+	background: #9370DB;
+	color: #fff;
+}
+.resumen-flex {
+	display: flex;
+	gap: 16px;
+	align-items: center;
+}
+.resumen-media img {
+	width: 90px;
+	height: 90px;
+	object-fit: contain;
+	border-radius: 8px;
+	background: #232323;
+	border: 1.5px solid #4B0082;
+}
+.resumen-body h4 {
+	margin: 0 0 6px 0;
+	color: #f8fafc;
+}
+.metodo-detalle {
+	margin-top: 10px;
+	padding: 12px;
+	background: #181818;
+	border-radius: 5px;
+	color: #f8fafc;
+	font-size: 0.97rem;
+	border: 1px solid #4B0082;
+}
+.metodo-detalle pre {
+	white-space: pre-wrap;
+	font-family: inherit;
+	margin: 0;
+}
+.mensaje-resultado {
+	margin-top: 12px;
+}
+@media(max-width:900px){
+	.herbalife-layout{flex-direction:column}
+	.herbalife-right{order:2}
+}
